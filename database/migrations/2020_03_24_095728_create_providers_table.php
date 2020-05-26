@@ -19,7 +19,6 @@ class CreateProvidersTable extends Migration
             $table->string('provider_name')->unique();
             $table->string('link_logo')->nullable();
             $table->timestamps();
-            $table->softDeletes();//delete_at
         });
     }
 

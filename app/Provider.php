@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Provider extends Model
 {
     //
-    use SoftDeletes;
+
 
     public $transformer = ProviderTransformer::class;
     protected $date = ['delete_at'];

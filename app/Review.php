@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Review extends Model
 {
     //
-    use SoftDeletes;
+
 
     public $transformer = ReviewTransformer::class;
     protected $date = ['delete_at'];

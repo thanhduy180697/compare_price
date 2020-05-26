@@ -18,12 +18,12 @@ class ProvidersSeeder extends Seeder
        // Model::unguard();
 
         $providers= [
-        	'Thế giới di động' =>  'https://vn-cs.com/data/data/anhpnh/2018/06/27/simple-colour-test-screen-with-white-color.jpg',
-        	'Fpt shop' => 'https://img.giaoduc.net.vn/w1050/uploaded/2020/zdhwqcrnw/2014_03_25/logofpt1.jpg',
-        	'CellphoneS'=> 'https://cdn.cellphones.com.vn/skin/frontend/default/cpsdesktop/images/media/logo.png',
+        	'Thế giới di động' =>  'https://brasol.vn/public/ckeditor/uploads/tin-tuc/1-logo-the-gioi-di-song-dien-may-xanh.jpg',
+        	'Fpt shop' => 'https://internetvietnam.net/wp-content/uploads/2019/08/logo-fpt.jpg',
+        	'CellphoneS'=> 'hhttps://cellphones.com.vn/media/cps-images/logo-s.png',
             'Viettel Store' => 'http://dongphucvnxk.com/wp-content/uploads/2019/08/logo-viettelstore.png',
-            'Hoàng hà mobile' => 'https://hoanghamobile.com/Content/v2.1/images/logo-text.png',
-            'Điện máy chợ lớn' => 'https://dienmaycholon.vn/public/dienmaycholon/general/img/logo-dmcl.png',
+            'Hoàng hà mobile' => 'https://yt3.ggpht.com/a/AGF-l7_vDv3ioYCJv786Pwuz6yR8fnQoNZiVriWjrg=s900-c-k-c0xffffffff-no-rj-mo',
+            'Điện máy chợ lớn' => '',
         ];
         foreach ($providers as $key => $value){
         	Provider::firstOrCreate([

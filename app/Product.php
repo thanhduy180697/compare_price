@@ -14,10 +14,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     //
-    use SoftDeletes;
     
     public $transformer = ProductTransformer::class;
-    protected $date = ['delete_at'];
     protected $fillable=[
     	'product_name',
 		'product_link',
@@ -25,6 +23,15 @@ class Product extends Model
 		'average_rating',
 		'provider_id',
 		'specification_id',
+        'display',
+        'operating_system',
+        'front_camera',
+        'rear_camera',
+        'battery',
+        'ram',
+        'cpu',
+        'brand',
+        'provider_id'
     ];
     protected $hidden = [
         'pivot'
@@ -32,10 +39,6 @@ class Product extends Model
     public function provider()
     {
         return $this->belongsTo(Provider::class);
-    }
-    public function specification()
-    {
-        return $this->belongsTo(Specification::class);
     }
     public function reviews()
     {

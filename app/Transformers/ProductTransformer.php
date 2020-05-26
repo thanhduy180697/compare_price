@@ -14,12 +14,7 @@ class ProductTransformer extends TransformerAbstract
      *
      * @return array
      */
-    // public $availableIncludes = [
-    //     'price','provider'
-    // ];
-    // protected $defaultIncludes = [
-    //     'price','provider'
-    // ];
+
     public function transform(Product $product)
     {
         return [
@@ -32,12 +27,18 @@ class ProductTransformer extends TransformerAbstract
             'price'=>(int)$product->price,
             'strPrice'=>(string)$product->str_price,
             'provider'=>(string)$product->provider,
-            'linkLogo'=>(string)$product->link_logo,           
-            'specification_id' => (int)$product->specification_id,
+            'linkLogo'=>(string)$product->link_logo,
+            'display' => (string)$product->display,
+            'os' => (string)$product->operating_system,
+            'frontCamera' => (string)$product->front_camera,
+            'rearCamera' => (string)$product->rear_camera,
+            'batteryCapacity' => (string)$product->battery,
+            'ram' => (string)$product->ram,
+            'cpu' => (string)$product->cpu,
+            'brand' => (string)$product->brand,
+            'storage' => (string)$product->storage,
             'crawlDate' => (string)$product->created_at,
             'crawlUpdate' => (string)$product->updated_at,
-            'deleteDate' => isset($product->deleled_at) ? (string) $product->deleted_at : null,
-
             'links' => 
             [
                 'rel' => 'self',
@@ -46,10 +47,6 @@ class ProductTransformer extends TransformerAbstract
             [
                 'rel' => 'products.provider',
                 'href' => route('products.provider.index', $product->id),
-            ],
-            [
-                'rel' => 'products.specification',
-                'href' => route('products.specification.index', $product->id),
             ],
             [
                 'rel' => 'products.reviews',
@@ -72,10 +69,18 @@ class ProductTransformer extends TransformerAbstract
             'price'=>'price',
             'provider' => 'provider',
             'provider_id' => 'provider_id',
-            'specification_id' => 'specification_id',
+            'display' => 'display',
+            'os' => 'operating_system',
+            'frontCamera' => 'front_camera',
+            'rearCamera' => 'rear_camera',
+            'batteryCapacity' => 'battery',
+            'ram' => 'ram',
+            'cpu' => 'cpu',
+            'product' => 'product',
+            'brand' => 'brand',
+            'storage' => 'storage',
             'crawlDate' => 'created_at',
             'crawlUpdate' => 'updated_at',
-            'deleteDate' => 'deleled_at',
         ];
         return isset($attributes[$index]) ? $attributes[$index] : null ;
     }
@@ -90,7 +95,16 @@ class ProductTransformer extends TransformerAbstract
             'price'=>'price',
             'provider' => 'provider',
             'provider_id' =>'provider_id',
-            'specification_id' =>'specification_id',
+            'display' =>'display',
+            'operating_system' =>'os',
+            'front_camera' =>'frontCamera',
+            'rear_camera' =>'rearCamera',
+            'battery' =>'batteryCapacity',
+            'ram' =>'ram',
+            'cpu' =>'cpu',
+            'product' => 'product',
+            'brand' =>'brand',
+            'storage' =>'storage',
             'created_at' =>'crawlDate',
             'updated_at' =>'crawlUpdate',
             'deleled_at' =>'deleteDate',

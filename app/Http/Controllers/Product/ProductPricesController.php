@@ -42,6 +42,5 @@ class ProductPricesController extends ApiController
         $price["product"] = $product;
         return $this->showOne($price);
     }
- 
 
 }

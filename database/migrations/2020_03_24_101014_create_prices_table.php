@@ -19,8 +19,6 @@ class CreatePricesTable extends Migration
             $table->string('product_price');
             $table->integer('product_id')->unsigned();
             $table->timestamps();
-            $table->softDeletes();//delete_at
-            
             $table->foreign('product_id')->references('id')->on('products');
         });
     }

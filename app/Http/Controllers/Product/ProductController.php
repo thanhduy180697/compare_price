@@ -21,7 +21,7 @@ class ProductController extends ApiController
     public function index()
     {
         //
-        // $array = array();
+        $array = array();
         $products = Product::all();
         foreach($products as $key => $product)
         {

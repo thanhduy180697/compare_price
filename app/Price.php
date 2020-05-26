@@ -10,8 +10,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Price extends Model
 {
     //
-    use SoftDeletes;
-
     public $transformer = PriceTransformer::class;
     protected $date = ['delete_at'];
     protected $fillable = [

@@ -22,7 +22,6 @@ class CreateReviewsTable extends Migration
             $table->string('rating')->nullable();
             $table->integer('product_id')->unsigned();
             $table->timestamps();
-            $table->softDeletes();//delete_at
             
             $table->unique(['reviewer_name', 'review_content', 'product_id']);
             $table->foreign('product_id')->references('id')->on('products');

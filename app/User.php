@@ -12,7 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements JWTSubject
 {
-   use Notifiable, SoftDeletes;
+   use Notifiable;
    //, HasApiTokens;
 
     const VERIFIED_USER = '1';
