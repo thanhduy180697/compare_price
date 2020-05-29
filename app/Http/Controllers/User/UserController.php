@@ -135,9 +135,14 @@ class UserController extends ApiController
     public function destroy(User $user)
     {
         //
-        $user->delete();
-        
-        return $this->showOne($user);
+        if($user->delete())
+        {
+            return response()->json(['success' => 'Delete success' , 'code' => 200],200);
+        }
+        else
+        {
+            return $this->errorResponse("User not exist",404);
+        }
     }
     public function verified($token)
     {

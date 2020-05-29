@@ -60,7 +60,7 @@ class MeProductController extends ApiController
         }
         else
         {
-            return $this->errorResponse("User have not follow product",404);
+            return $this->errorResponse("User have not follow product",409);
         }
     }
 }

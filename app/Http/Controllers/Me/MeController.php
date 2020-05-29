@@ -33,6 +33,7 @@ class MeController extends ApiController
         $user = Auth::guard('api')->user();
         $rules = [
             'password' => 'min:6|confirmed',
+            'email' => 'email|unique:users'
         ];
 
         $this->validate($request, $rules);
@@ -43,6 +44,11 @@ class MeController extends ApiController
 
         if($request->has('password')){
             $user->password = bcrypt($request->password);
+        }
+        if($request->has('email') && $user->email != $request->email){
+            $user->verified = User::UNVERIFIED_USER;
+            $user->verification_token = User::generateVerificationCode();
+            $user->email = $request->email;
         }
         if($user->isClean()){
             return $this->errorResponse('You need to specify a different value to update',422);
